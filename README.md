@@ -2,7 +2,7 @@
 
 Projet pro B3 Dev
 
-#⚠️ Avant toute chose, ne pas oublier de créer des branches pour faire des modifications, et d'ensuite faire des merge request pour l'aspect DevOps du projet ⚠️
+# ⚠️ Avant toute chose, ne pas oublier de créer des branches pour faire des modifications, et d'ensuite faire des merge request pour l'aspect DevOps du projet ⚠️
 
 ## Initialisation du projet (Symfony 5.2)
 
