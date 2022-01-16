@@ -1,0 +1,154 @@
+//  font-family: 'IBM Plex Mono', monospace;
+//  font-family: 'IBM Plex Sans', sans-serif;
+
+.navbar__sirio{
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 300;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #c7c1bf;
+  transition: 0.5s;
+
+  a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    span{
+      margin-left: 20px;
+    }
+    &:hover {
+      transition: 0.5s;
+      color: #000000;
+    }
+  }
+  .navbar__search{
+      display: flex;
+      align-items: center;
+      width: 20vw;
+    input{
+      padding: 5px;
+      width: 100%;
+      border-bottom: 1px solid #c7c1bf;
+      &:focus{
+        border-bottom: 1px solid black;
+        transition: ease-in-out 0.5s;
+        color: black;
+      }
+    }
+    i{
+      padding-right: 10px;
+    }
+  }
+
+  .navbar__items{
+    text-decoration: none;
+
+    ul{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      li{
+        margin-left: 70px;
+        &:first-child{
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+.navbar__divider{
+  background-color: black;
+  opacity: 1;
+  margin-top: 45px;
+}
+
+.right-vertical-div{
+
+}
+
+.footer__elements{
+    display: flex;
+    justify-content: center;
+    span{
+      text-transform: uppercase;
+      margin-left: 30px;
+      letter-spacing: 3px;
+      padding-left: 30px;
+      border-left: 1px solid black;
+
+      &:first-child{
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+      }
+    }
+}
+
+.section__hero{
+  font-family: 'Playfair Display', serif;
+  .hero-container{
+    .card-href{
+      transition: 0.5s;
+      &:hover{
+        transition: 0.5s;
+        box-shadow: rgb(97, 72, 61, 0.25) 0px 25px 50px -12px;
+      }
+    }
+    .section-text{
+      font-family: 'IBM Plex Sans', sans-serif;
+      text-align: justify;
+      a{
+        font-family: 'IBM Plex Mono', monospace;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 3px;
+        transition: 0.5s;
+        &:hover{
+          color: #62493c;
+          transition: 0.5s;
+        }
+      }
+    }
+    .hero-title{
+      color: black;
+      font-size: 80px;
+      line-height: 1.2;
+    }
+    span{
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+
+    .card{
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      .card-img-top{
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+      .card-title{
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 20px;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: #62493c;
+      }
+      .card-prix{
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: black;
+      }
+
+      .card-body{
+        margin-top: 30px;
+      }
+    }
+  }
+}

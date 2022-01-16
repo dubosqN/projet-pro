@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %} {{ name }} - Sirio{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;300;400;500;600&family=IBM+Plex+Sans:wght@100;300;400&family=Playfair+Display&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {#
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                ...
+            </div>
+        </div>
+        #}
+
+        <nav class="navbar__sirio">
+            <a href="#">
+                <img src="{{ asset('images/sirio_logo1.png') }}"/>
+            </a>
+            <div class="navbar__search">
+                <i class="fas fa-search"></i><input type="text" placeholder="Recherche">
+            </div>
+            <div class="navbar__items">
+                <ul>
+                    <li>
+                        <a href="#">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="#">Se connecter</a>
+                    </li>
+                    {% if app.user %}
+                    <li>
+                        <a href="#">Panier</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+        <hr class="navbar__divider" />
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+    <footer>
+        <div class="footer__elements">
+            <span>Sirio - Copyright 2022</span>
+            <span>Mention Légales</span>
+            <span>Contact</span>
+        </div>
+
+    </footer>
+</html>

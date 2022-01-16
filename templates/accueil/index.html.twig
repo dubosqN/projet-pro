@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<section class="section__hero">
+    <div class="hero-container">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <h1 class="hero-title">Découvrez les produits populaires de Sirio</h1>
+            </div>
+        </div>
+        <div class="row justify-content-xxl-end p-5">
+            <div class="col-xxl-3 section-text">
+                <p>
+                    <b>Les innovateurs du mobilier de luxe abordable.</b>
+                    <br/><br/>En 1980, Richard Song, expert en achats artisanaux, a lancé la société de meubles StarSong. Depuis lors, des milliers de familles ont profité du confort, du luxe et de l’élégance décontractée des innovations de Song en matière de mobilier de jardin.
+                    <br/><br/>Entreprise familiale établie, StarSong a grandi grâce à la recherche dévouée de la famille à travers le monde pour trouver des matériaux de haute qualité utilisés dans leurs conceptions pratiques et dernier cri. Aujourd'hui, le fabricant de meubles de luxe abordables basé dans le nord de la Californie est dirigé par son fils Dan, qui partage les valeurs traditionnelles de son père et son engagement envers la qualité et la créativité. StarSong est fier de ses meubles de luxe accessibles, ainsi que de leur excellence en matière de service à la clientèle.
+                    <a href="#">
+                        <br/>Découvrir Sirio <i class="fas fa-arrow-right"></i>
+                    </a>
+                </p>
+            </div>
+            <div class="col-xxl-3">
+
+                <div class="card">
+                    <a href="#" class="card-href">
+                        <img src="{{ asset('images/exterieur_chaises.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h4 class="card-prix">900€</h4>
+                            <h5 class="card-title">Salons de Jardin</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <div class="col-xxl-3">
+                <div class="card">
+                    <a href="#" class="card-href">
+                        <img src="{{ asset('images/exterieur_repas.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h4 class="card-prix">3999€</h4>
+                            <h5 class="card-title">Ensemble Repas</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xxl-3">
+                <div class="card">
+                    <a href="#" class="card-href">
+                        <img src="{{ asset('images/HP_FIRE_TABLE.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h4 class="card-prix">999€</h4>
+                            <h5 class="card-title">Foyer Sirio</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
