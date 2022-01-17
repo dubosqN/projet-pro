@@ -20,8 +20,8 @@ class UserCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setEntityLabelInSingular('Email')
-            ->setEntityLabelInPlural('Emails')
+            ->setEntityLabelInSingular('Utilisateur')
+            ->setEntityLabelInPlural('Utilisateurs')
             ->setEntityPermission('ROLE_ADMIN')
             ->setSearchFields(null)
             ->setDefaultSort(['email' => 'ASC'])
@@ -35,8 +35,6 @@ class UserCrudController extends AbstractCrudController
             TextField::new('prenom', 'Prénom')->setRequired(true),
             ChoiceField::new('genre', 'MR/MME')->setChoices(['Madame' => 'Madame', 'Monsieur' => 'Monsieur'])->setRequired(true),
             TextField::new('email', 'Mail'),
-            TextField::new('password', 'Mot de passe')->onlyWhenCreating()->setRequired(true)->setFormType(PasswordType::class),
-            TextField::new('password', 'Mot de passe')->onlyWhenUpdating()->setRequired(false)->setFormType(PasswordType::class),
             ChoiceField::new('roles', 'Roles')->setChoices(['ROLE_ADMIN' => 'ROLE_ADMIN', 'ROLE_PROF' => 'ROLE_PROF'])->allowMultipleChoices()->onlyOnForms(),
             ArrayField::new('roles', 'Roles')->onlyOnIndex(),
         ];

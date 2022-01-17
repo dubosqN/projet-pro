@@ -3,22 +3,30 @@
 {% block title %}Hello LoginController!{% endblock %}
 
 {% block body %}
-    {% if error %}
-        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+<div class="container-fluid form-section">
+    <h1>Sirio | Connexion</h1>
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-5 form-container">
+        <form action="{{ path('login') }}" method="post">
+            <h2>Connexion</h2>
+            <label for="username">Email:</label>
+            <input class="form-control shadow-none input__email" type="text" id="username" name="_username" value="{{ last_username }}"/>
+    
+            <label for="password">Password:</label>
+            <input class="form-control shadow-none input__password" type="password" id="password" name="_password"/>
+    
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+    
+            {# If you want to control the URL the user is redirected to on success
+            <input type="hidden" name="_target_path" value="/account"/> #}
+            {% if error %}
+            <div class="alert alert-danger mt-2">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
 
-    <form action="{{ path('login') }}" method="post">
-        <label for="username">Email:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}"/>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="_password"/>
-
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-        {# If you want to control the URL the user is redirected to on success
-        <input type="hidden" name="_target_path" value="/account"/> #}
-
-        <button type="submit">login</button>
-    </form>
+            <button class="btn btn-login shadow-none" type="submit">Se connecter</button>
+            <a class="btn btn-login shadow-none" href="{{ path('app_register') }}">Créer un compte</a>
+        </form>
+        </div>
+    </div>
+</div> 
 {% endblock %}

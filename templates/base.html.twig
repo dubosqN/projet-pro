@@ -39,7 +39,11 @@
             <div class="navbar__items">
                 <ul>
                     <li>
-                        <a href="#">Se connecter</a>
+                        {% if (app.user) %}
+                            <a href="#">Mon compte</a> 
+                        {% else %}
+                            <a href="{{ path('login') }}">Se connecter</a>
+                        {% endif %}
                     </li>
                     <li>
                         <a href="#">Panier</a>

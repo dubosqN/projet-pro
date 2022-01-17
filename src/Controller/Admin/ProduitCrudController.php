@@ -23,16 +23,19 @@ class ProduitCrudController extends AbstractCrudController
     }
 
     public function configureFields(string $pageName): iterable
+
     {
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('nom')->setRequired(true),
-            AssociationField::new('couleur', 'Couleur(s)')->setRequired(true),
+            //AssociationField::new('couleur', 'Couleur(s)')->setRequired(true),
             //TextAreaField::new('photoFile', 'Photo de couverture')->setFormType(VichImageType::class)->setRequired(true)->setFormTypeOptions(['allow_delete' => false ])->onlyOnForms(),
             //ImageField::new('photo')->setBasePath('/images/photos')->hideOnForm(),
             //CollectionField::new('images')->setEntryType(ImagesType::class)->onlyOnForms(),
             //CollectionField::new('images')->setTemplatePath('images.html.twig')->onlyOnDetail(),
+        
         ];
+        
     }
 
     public function configureActions(Actions $actions): Actions

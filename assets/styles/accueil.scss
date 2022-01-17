@@ -173,3 +173,50 @@
     }
   }
 }
+
+
+/// Login /// 
+.form-section{
+  min-height: 80vh;
+  align-items: center;
+  h1{
+    color: #acbe7f;
+    font-size: 24px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+}
+.form-container{
+  height: 100%;
+  background-color: #fff;
+  padding: 100px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  margin-top: 80px !important;
+  .btn-login{
+    margin-top: 10px;
+    color: #acbe7f;
+    border: 1px solid #acbe7f;
+    &:hover{
+      color: #fff;
+      background-color: #acbe7f;
+      border: 1px solid transparent;
+    }
+  }
+  input{
+    &:focus{
+      border: 1px solid #acbe7f;
+      color: #c7c1bf;
+    }
+  }
+  h2{
+    padding: 10px;
+    font-size: 28px;
+    color: black;
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-transform: uppercase;
+  }
+}
