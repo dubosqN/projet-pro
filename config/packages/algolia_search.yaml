@@ -1,10 +1,8 @@
 # All available configuration can be found here:
 # https://www.algolia.com/doc/api-client/symfony/configuration/
 algolia_search:
-  doctrineSubscribedEvents: ['postPersist']
+  doctrineSubscribedEvents: ['postPersist', 'postUpdate', 'preRemove']
   indices:
-    - name: produits
+    - name: products
       class: App\Entity\Produit
       enable_serializer_groups: true
-
-  

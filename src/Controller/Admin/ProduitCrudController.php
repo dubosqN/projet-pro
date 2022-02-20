@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -27,8 +28,14 @@ class ProduitCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            TextField::new('nom')->setRequired(true),
-            AssociationField::new('couleur', 'Couleur(s)')->setRequired(true),
+            TextField::new('name')->setRequired(true),
+            TextField::new('description')->setRequired(true)->onlyOnForms(),
+            TextField::new('url')->setRequired(true)->onlyOnForms(),
+            TextField::new('image')->setRequired(true),
+            IntegerField::new('price')->setRequired(true),
+            TextField::new('price_range')->setRequired(true)->onlyOnForms(),
+            IntegerField::new('rating')->setRequired(true)->onlyOnForms(),
+            AssociationField::new('couleur', 'Couleur(s)')->setRequired(true)->onlyOnForms(),
             //TextAreaField::new('photoFile', 'Photo de couverture')->setFormType(VichImageType::class)->setRequired(true)->setFormTypeOptions(['allow_delete' => false ])->onlyOnForms(),
             //ImageField::new('photo')->setBasePath('/images/photos')->hideOnForm(),
             //CollectionField::new('images')->setEntryType(ImagesType::class)->onlyOnForms(),
