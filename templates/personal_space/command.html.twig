@@ -1,0 +1,60 @@
+{% extends 'personal_space/base.html.twig' %}
+
+{% block personal_space_title %}Mes commandes > Commande n°A12345{% endblock %}
+
+{% block personal_space %}
+<div class="command section-text">
+    <div class="d-flex justify-content-between">
+        <p>Commande n°A12345</p>
+        <p class="command-prix">299€</p>
+    </div>
+    <p class="command-status">En cours de livraison</p><br>
+
+    <b>Addresse de livraison</b>
+    <p>Gruillaume Leone</p>
+    <p>10 Avenue de la Défense</p>
+    <p>75000 Paris</p><br>
+
+    <div class="d-flex justify-content-between">
+        <b>Détails de votre commande</b>
+        <a href="#">Télécharger la facture</a>
+    </div>
+    
+    <table class="command-table">
+        <thead>
+            <tr>
+                <th class="img">Image</th>
+                <th>Nom</th>
+                <th>Quantité</th>
+                <th>Prix</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="img"><img src="{{ asset('images/exterieur_chaises.jpg') }}" alt="..."></td>
+                <td>Canapé</td>
+                <td>1</td>
+                <td>100 €</td>
+            </tr>
+            <tr>
+                <td class="img"><img src="{{ asset('images/exterieur_repas.jpg') }}" alt="..."></td>
+                <td>Chaise</td>
+                <td>2</td>
+                <td>65 €</td>
+            </tr>
+            <tr>
+                <td class="img"><img src="{{ asset('images/HP_FIRE_TABLE.jpg') }}" alt="..."></td>
+                <td>Lampe</td>
+                <td>1</td>
+                <td>34 €</td>
+            </tr>
+            <tr>
+                <td>t</td>
+                <td>t</td>
+                <td>t</td>
+                <td>t</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

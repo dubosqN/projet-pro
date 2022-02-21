@@ -1,0 +1,22 @@
+{% extends 'personal_space/base.html.twig' %}
+
+{% block personal_space_title %}Mes commandes{% endblock %}
+
+{% block personal_space %}
+<div class="command">
+    <div class="d-flex justify-content-between">
+        <p>Commande n°A12345</p>
+        <p class="command-prix">299€</p>
+    </div>
+    <p class="command-status">En cours de livraison</p><br>
+    <a href="/personal_space/mycommands/command" class="command-more">Voir en détails >></a>
+</div>
+<div class="command">
+    <div class="d-flex justify-content-between">
+        <p>Commande n°A54321</p>
+        <p class="command-prix">43€</p>
+    </div>
+    <p class="command-status">Livrée le 19/09/2020</p><br>
+    <a href="/personal_space/mycommands/command" class="command-more">Voir en détails >></a>
+</div>
+{% endblock %}
