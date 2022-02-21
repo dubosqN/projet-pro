@@ -123,6 +123,12 @@ footer{
   width: 100vw;
   font-family: 'IBM Plex Mono', monospace;
 
+  .card-href{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
   &__container {
     padding: 3.5vw;
     .text-hero-left {
@@ -236,12 +242,12 @@ footer{
 }
   /// Breadcrumb ///
   .ariane{
-    padding: .5vw;
+    padding: 1vw 4vw;
 
     h1 {
       border-bottom: 1px solid #acbe7f;
       color: #000000;
-      font-size: 24px;
+      font-size: 1.250vw;
       font-family: 'IBM Plex Mono', monospace;
 
       span {
@@ -298,6 +304,7 @@ footer{
   ///modif algolia
   #searchbox {
     width: 50%;
+    padding: 0 2vw !important;
   }
 
   #pagination {
