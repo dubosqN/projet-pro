@@ -45,11 +45,13 @@ class Produit
 
     /**
      * @ORM\ManyToMany(targetEntity=Couleur::class, inversedBy="produits")
+     * @Groups({"searchable"})
      */
     private $couleur;
 
     /**
      * @ORM\ManyToMany(targetEntity=Category::class, inversedBy="produits")
+     * @Groups({"searchable"})
      */
     private $category;
 

@@ -3,12 +3,13 @@
 {% block body %}
 <section class="hero">
     <div class="hero__container">
-        {#<p class="text-hero-left">Produits Populaires</p>#}
-        <div class="ais-InstantSearch">
+        <p class="text-hero-left">Produits Populaires</p>
+        <div type="text" id="searchbox" class="ais-SearchBox"></div>
+{#        <div class="ais-InstantSearch">
             <div id="hits"></div>
             <div id="pagination"></div>
-        </div>
-        {#<div class="hero__grid">
+        </div>#}
+        <div class="hero__grid">
             <div class="section-text">
                 <p>
                     <b>Les innovateurs du mobilier de luxe abordable.</b>
@@ -75,7 +76,7 @@
                     </div>
                 </a>
             </div>
-        </div>#}
+        </div>
     </div>
 </section>
 {% endblock %}

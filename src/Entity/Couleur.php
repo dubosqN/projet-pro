@@ -6,6 +6,7 @@ use App\Repository\CouleurRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=CouleurRepository::class)
@@ -21,11 +22,13 @@ class Couleur
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"searchable"})
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", nullable=true)
+     * @Groups({"searchable"})
      */
     private $hex;
 

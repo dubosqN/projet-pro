@@ -1,14 +1,26 @@
 const search = instantsearch({
     indexName: 'dev_products',
     searchClient: algoliasearch('XDJVKX7TWN', 'd4440d4b4f96012f0f25ecea529d5809'),
+    routing: true,
 });
 
+const brandList = instantsearch.widgets.panel({
+    templates: {
+        header: 'Couleurs',
+    },
+})(instantsearch.widgets.refinementList);
+
+const categoryMenu = instantsearch.widgets.panel({
+    templates: {
+        header: 'Categories',
+    },
+})(instantsearch.widgets.refinementList);
 
 search.addWidgets([
 
     instantsearch.widgets.searchBox({
         container: '#searchbox',
-        placeholder: 'Rechercher un produit...',
+        placeholder: 'Un produit en particulier ?',
         autofocus: true,
         searchAsYouType: true,
     }),
@@ -19,6 +31,7 @@ search.addWidgets([
         container: '#brand-list',
         attribute: 'category',
     }),*/
+
     instantsearch.widgets.hits({
         container: '#hits',
         templates: {
@@ -44,6 +57,27 @@ search.addWidgets([
       `,
         },
     }),
+    instantsearch.widgets.clearRefinements({
+        container: '#clear-refinements',
+        templates: {
+            resetLabel: 'Réinitialiser les filtres',
+        }
+    }),
+
+    brandList({
+        container: '#refinement-list',
+        attribute: 'couleur.nom',
+    }),
+
+    categoryMenu({
+        container: '#menu',
+        attribute: 'category.name',
+    }),
+
+    instantsearch.widgets.currentRefinements({
+        container: '#current-refinements',
+    }),
+
     instantsearch.widgets.pagination({
         container: '#pagination',
         hitsPerPage : '2',

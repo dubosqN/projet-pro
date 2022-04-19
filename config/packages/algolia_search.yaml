@@ -6,3 +6,11 @@ algolia_search:
     - name: products
       class: App\Entity\Produit
       enable_serializer_groups: true
+
+    - name: category
+      class: App\Entity\Category
+      enable_serializer_groups: true
+
+    - name: couleur
+      class: App\Entity\Couleur
+      enable_serializer_groups: true

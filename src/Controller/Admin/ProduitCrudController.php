@@ -36,6 +36,7 @@ class ProduitCrudController extends AbstractCrudController
             TextField::new('price_range')->setRequired(true)->onlyOnForms(),
             IntegerField::new('rating')->setRequired(true)->onlyOnForms(),
             AssociationField::new('couleur', 'Couleur(s)')->setRequired(true)->onlyOnForms(),
+            AssociationField::new('category', 'Categorie(s)')->setRequired(true)->onlyOnForms(),
             //TextAreaField::new('photoFile', 'Photo de couverture')->setFormType(VichImageType::class)->setRequired(true)->setFormTypeOptions(['allow_delete' => false ])->onlyOnForms(),
             //ImageField::new('photo')->setBasePath('/images/photos')->hideOnForm(),
             //CollectionField::new('images')->setEntryType(ImagesType::class)->onlyOnForms(),

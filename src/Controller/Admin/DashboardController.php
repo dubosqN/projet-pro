@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Category;
 use App\Entity\User;
 use App\Entity\Produit;
 use App\Entity\Couleur;
@@ -41,7 +42,8 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToRoute('Voir le site', 'fa fa-globe', 'accueil'),
             MenuItem::section('Contenu'),
             MenuItem::linkToCrud('Produits', 'fas fa-question', Produit::class)->setPermission('ROLE_ADMIN'),
-            MenuItem::linkToCrud('Couleurs', 'fas fa-color', Couleur::class)->setPermission('ROLE_ADMIN'),
+            MenuItem::linkToCrud('Categories', 'fas fa-question', Category::class)->setPermission('ROLE_ADMIN'),
+            MenuItem::linkToCrud('Couleurs', 'fas fa-question', Couleur::class)->setPermission('ROLE_ADMIN'),
 
             MenuItem::section('Utilisateurs')->setPermission('ROLE_ADMIN'),
             MenuItem::linkToCrud('Comptes', 'fa fa-user', User::class)->setPermission('ROLE_ADMIN'),

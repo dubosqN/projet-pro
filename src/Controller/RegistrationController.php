@@ -34,7 +34,7 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
+            //encode le mdp
             $user->setPassword(
             $userPasswordHasher->hashPassword(
                     $user,
@@ -45,12 +45,12 @@ class RegistrationController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            // generate a signed url and email it to the user
+            // url de verif
             $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
                 (new TemplatedEmail())
-                    ->from(new Address('verification@sirio.com', 'Vérification - Sirio'))
+                    ->from(new Address('verification@sirio.com', 'Sirio - Verification'))
                     ->to($user->getEmail())
-                    ->subject('Please Confirm your Email')
+                    ->subject('Sirio - Bienvenue ! Verification de votre adresse mail')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
             );
             // do anything else you need here, like send an email
