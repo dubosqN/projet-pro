@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="profil-section">
+        <div class="profil-container">
+            <div class="profil_menu">
+                <a class="profil_menu_a" href="#" onclick="divVisibility('commande_container');">Mes commandes</a>
+                <span class="divider-menu"></span>
+                <a class="profil_menu_a" href="#" onclick="divVisibility('info-container');">Mes informations</a>
+                <span class="divider-menu"></span>
+                <a class="profil_menu_a" href="#" onclick="divVisibility('mdp-container');">Mot de passe</a>
+                <span class="divider-menu"></span>
+                <a class="profil_menu_a" href="#" onclick="divVisibility('cartes-container');">Mes cartes de paiments</a>
+                <span class="divider-menu"></span>
+                <a class="profil_menu_a" href="#">Se déconnecter</a>
+            </div>
+            <div class="profil_infos">
+                <div class="mes-commandes-container" id="commande_container">
+                    {% for c in commandes %}
+                        <div class="commande">
+                            <div class="titre-prix">
+                                <h1 class="titre">Commande <span>n°{{ c.numero }}</span></h1>
+                                <h2 class="prix">999€</h2>
+                            </div>
+                            <div class="status">
+                                <span class="status-span">En cours de livraison</span>
+                                <a class="detail-commandes" href="#">Voir en détails</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="mes-informations-container" id="info-container">
+                    <div class="informations">
+                        {{ form_start(informationsForm, {'attr': {'class': 'row g-3'}}) }}
+                            <div class="col-md-6">
+                                <label for="inputEmail4" class="form-label">Nom</label>
+                                {{ form_widget(informationsForm.nom, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPassword4" class="form-label">Prénom</label>
+                                {{ form_widget(informationsForm.prenom, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="col-12">
+                                <label for="inputAddress" class="form-label">Address</label>
+                                {{ form_widget(informationsForm.adresse, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputCity" class="form-label">City</label>
+                                {{ form_widget(informationsForm.ville, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="col-md-2">
+                                <label for="inputState" class="form-label">State</label>
+                                {{ form_widget(informationsForm.cp, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="col-12">
+                                <label for="inputAddress" class="form-label">E-mail</label>
+                                {{ form_widget(informationsForm.email, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="col-12">
+                                {{ form_widget(informationsForm.enregistrer, {'attr': {'class': 'btn btn-primary'}}) }}
+                            </div>
+                        {{ form_errors(informationsForm) }}
+                        {{ form_end(informationsForm) }}
+                    </div>
+                </div>
+                <div class="mdp-container" id="mdp-container">
+                    <div class="row g-3">
+                        <div class="col-md-12">
+                            <label class="form-label">Ancien mot de passse</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Nouveau Mot de passe</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Confirmer le nouveau mot de passe</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Modifier</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mes-cartes-container" id="cartes-container">
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

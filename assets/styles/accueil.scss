@@ -373,3 +373,131 @@ footer{
   line-height: 0;
   padding: 0;
 }
+
+
+//profil
+.profil-section{
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+
+  .profil-container{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    height: 100%;
+
+    .profil_menu{
+      width: 20%;
+      max-width: 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  }
+}
+
+.profil_menu_a{
+  color: #333333;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: .5s;
+  &:hover{
+    color: #acbe7f;
+  }
+}
+
+.divider-menu{
+  width: 80px;
+  height: 1px;
+  background-color: #acbe7f;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+#info-container, #mdp-container, #cartes-container{
+  display: none;
+}
+.profil-infos{
+  width: 60%;
+  max-width: 60%;
+  height: 100%;
+  display: -webkit-flex;
+  align-items: start;
+  flex-direction: column;
+}
+
+.commande{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  border: 1px solid #acbe7f;
+  width: 500px;
+
+  &:first-child{
+    margin-top: 0;
+  }
+
+  .detail-commandes{
+    font-weight: 500;
+    transition: .5s;
+    &:hover{
+      color: #acbe7f;
+    }
+  }
+
+  .titre-prix{
+    width: 100%;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .prix{
+      font-weight: 600;
+    }
+
+    .titre{
+      span{
+        color: #acbe7f;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .status{
+    margin-top: 1rem;
+    display: -webkit-flex;
+    flex-direction: column;
+    .status-span{
+      margin-top: 1rem;
+    }
+    a{
+      margin-top: .5rem;
+    }
+  }
+}
+
+.informations{
+  width: 70%;
+}
+
+
+.btn-primary{
+  background-color: #acbe7f !important;
+  border: 1px solid #acbe7f !important;
+}
+
+.form-control{
+  box-shadow: none !important;
+}
+
+.form-control:focus {
+  border-color: #acbe7f !important;
+}

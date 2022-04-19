@@ -69,6 +69,33 @@
                         "navbar-fixed");
                 }
             });
+
+
+            //profil div
+            var divs = ["commande_container", "info-container", "mdp-container", "cartes-container"];
+            var visibleDivId = null;
+
+            function divVisibility(divId) {
+                if (visibleDivId === divId) {
+                    visibleDivId = null;
+                } else {
+                    visibleDivId = divId;
+                }
+                hideNonVisibleDivs();
+            }
+
+            function hideNonVisibleDivs() {
+                var i, divId, div;
+                for (i = 0; i < divs.length; i++) {
+                    divId = divs[i];
+                    div = document.getElementById(divId);
+                    if (visibleDivId === divId) {
+                        div.style.display = "block";
+                    } else {
+                        div.style.display = "none";
+                    }
+                }
+            }
         </script>
         <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js" integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
