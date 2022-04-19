@@ -1,0 +1,27 @@
+{% extends 'personal_space/base.html.twig' %}
+
+{% block personal_space_title %}Mes cartes de paiement{% endblock %}
+
+{% block personal_space %}
+<form action="#">
+    <div class="imputLabel">
+        <label for="nameCard">Nom de la carte</label>
+        <input type="text" id="nameCard"/>
+    </div>
+    <div class="imputLabel">
+        <label for="numberCard">Numéro de la carte</label>
+        <input type="number" id="numberCard"/>
+    </div>
+    <div class="d-flex">
+        <div class="imputLabel">
+            <label for="dateCard">Confirmation du mot de passe</label>
+            <input type="date" id="dateCard"/>
+        </div>
+        <div class="imputLabel">
+            <label for="cryptogrameCard">Cryptograme</label>
+            <input type="number" id="cryptogrameCard" minlength="3" maxlength="3"/>
+        </div>
+    </div>
+    <button>Valider</button>
+</from>
+{% endblock %}

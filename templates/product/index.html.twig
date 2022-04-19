@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<section class="section__hero">
+    <div class="hero-container">
+        <p class="text-hero-left">Produit</p>
+        <div class="row justify-content-xxl-end flex-wrap-reverse p-5">
+            <div class="col-xxl-2">
+                <img src="{{ asset('images/exterieur_chaises_1.jpg') }}" class="card-img-top" alt="..."><br>
+                <img src="{{ asset('images/exterieur_chaises_2.jpg') }}" class="card-img-top" alt="...">
+            </div>
+            <div class="col-xxl-6">
+                <img src="{{ asset('images/exterieur_chaises.jpg') }}" class="card-img-top" alt="...">
+            </div>
+            <div class="col-xxl-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Salons de Jardin</h5>
+                        <h4 class="card-prix">900€</h4>
+                        <p>Lorem ipsum dolor sit amet. Eveniet ducimus rem alias nesciunt sit minima veritatis rem possimus quam in expedita quod eos voluptate aspernatur! Qui itaque harum qui laborum minima rem voluptas illo eum nihil eligendi ut modi obcaecati!<p/>
+                        <p class="card-text">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            (32)
+                        </p>
+                        <hr>
+                        <p>10 en stock</p>
+                        <hr>
+                        <button class="add-panier">Ajouter au panier</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

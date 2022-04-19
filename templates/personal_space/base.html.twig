@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<section class="section__hero">
+    <div class="hero-container">
+        <p class="text-hero-left">Votre compte > {% block personal_space_title %}{% endblock %}</p>
+        <div class="personal-container">
+            <nav class="personal-nav">
+                <ul>
+                    <li><a href="/personal_space/mycommands">Mes commandes</a></li>
+                    <li><a href="/personal_space/myinfos">Mes information</a></li>
+                    <li><a href="/personal_space/password">Mot de passe</a></li>
+                    <li><a href="/personal_space/mypaymentcards">Mes cartes de paiement</a></li>
+                    <li><a href="#">Se déconecter</a></li>
+                </ul>
+            </nav>
+            <div class="personal-section">
+                {% block personal_space %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

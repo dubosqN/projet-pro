@@ -1,0 +1,112 @@
+.personal-container {
+  margin-top: 1rem;
+  display: flex;
+
+  .personal-nav {
+    border-right: 1px solid #000;
+
+    li {
+      position: relative;
+      &:not(:first-child)::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 50%;
+        border-top: 1px solid #000;
+        transform: translate(50%, 0);
+      }
+    }
+
+    a {
+      display: block;
+      padding: 1rem;
+      color: #212529;
+      text-align: center;
+
+      &:hover {
+        color: #acbe7f;
+      }
+    }
+  }
+
+  .personal-section {
+    flex: 1;
+    margin-left: 1rem;
+
+    .imputLabel {
+      margin-right: 1rem;
+      input {
+        background-color: #fff;
+        border: solid 1px gray;
+      }
+    }
+
+    button {
+      margin-top: 1rem;
+      border: solid #212529 2px;
+      padding: 5px 10px;
+      color: #212529;
+      border-radius: 2px;
+      transition: 0.3s;
+
+      &:hover {
+        border: solid #acbe7f 2px;
+      }
+    }
+
+    .command {
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: solid #000 1px;
+
+      .command-prix {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: black;
+      }
+
+      .command-more {
+        color: #acbe7f;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #616b47;
+        }
+      }
+
+      .command-table {
+        width: 100%;
+        border-radius: 20px;
+
+        border-collapse: collapse;
+
+        img {
+          display: block;
+        }
+
+        thead {
+          background-color: #9d9d9d;
+        }
+
+        th {
+          padding: 1rem;
+        }
+
+        th,
+        td {
+          border: solid 1px #000;
+          text-align: center;
+
+          &.img {
+            max-width: 2rem;
+          }
+        }
+
+        tbody tr:nth-child(2n + 1) {
+          background-color: #e6e6e6;
+        }
+      }
+    }
+  }
+}

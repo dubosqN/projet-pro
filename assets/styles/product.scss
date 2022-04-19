@@ -1,0 +1,11 @@
+.add-panier {
+  border: solid #212529 2px;
+  padding: 5px 10px;
+  color: #212529;
+  border-radius: 2px;
+  transition: 0.3s;
+
+  &:hover {
+    border: solid #acbe7f 2px;
+  }
+}
