@@ -9,73 +9,36 @@
             <div id="hits"></div>
             <div id="pagination"></div>
         </div>#}
-        <div class="hero__grid">
+        <div class="hero-text-card">
             <div class="section-text">
                 <p>
                     <b>Les innovateurs du mobilier de luxe abordable.</b>
                     <br/><br/>En 1980, Richard Song, expert en achats artisanaux, a lancé la société de meubles StarSong. Depuis lors, des milliers de familles ont profité du confort, du luxe et de l’élégance décontractée des innovations de Song en matière de mobilier de jardin.
                     <br/><br/>Entreprise familiale établie, StarSong a grandi grâce à la recherche dévouée de la famille à travers le monde pour trouver des matériaux de haute qualité utilisés dans leurs conceptions pratiques et dernier cri. Aujourd'hui, le fabricant de meubles de luxe abordables basé dans le nord de la Californie est dirigé par son fils Dan, qui partage les valeurs traditionnelles de son père et son engagement envers la qualité et la créativité. StarSong est fier de ses meubles de luxe accessibles, ainsi que de leur excellence en matière de service à la clientèle.
-                    <a href="#">
+                    <a href="/categorie">
                         <br/>Découvrir Sirio <i class="fas fa-arrow-right"></i>
                     </a>
                 </p>
             </div>
-            <div class="hero__card">
-                <a href="#" class="card-href">
-                    <div class="card-image">
-                        <img src="{{ asset('images/exterieur_chaises.jpg') }}">
-                    </div>
-                    <div class="card--body">
-                        <h5 class="card-title">Salons de Jardin</h5>
-                        <h4 class="card-prix">900€</h4>
-                        <p class="card-text">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fas fa-star-half checked"></span>
-                            (32)
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="hero__card">
-                <a href="#" class="card-href">
-                    <div class="card-image">
-                        <img src="{{ asset('images/exterieur_chaises.jpg') }}">
-                    </div>
-                    <div class="card--body">
-                        <h5 class="card-title">Salons de Jardin</h5>
-                        <h4 class="card-prix">900€</h4>
-                        <p class="card-text">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fas fa-star-half checked"></span>
-                            (32)
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="hero__card">
-                <a href="#" class="card-href">
-                    <div class="card-image">
-                        <img src="{{ asset('images/exterieur_chaises.jpg') }}">
-                    </div>
-                    <div class="card--body">
-                        <h5 class="card-title">Salons de Jardin</h5>
-                        <h4 class="card-prix">900€</h4>
-                        <p class="card-text">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fas fa-star-half checked"></span>
-                            (32)
-                        </p>
-                    </div>
-                </a>
-            </div>
+            {% for p in produits %}
+                <div class="hero__card">
+                    <a href="/produits/{{ p.id }}" class="card-href">
+                        <div class="card-image">
+                            <img src="{{ p.image }}">
+                        </div>
+                        <div class="card--body">
+                            <h5 class="card-title">{{ p.name }}</h5>
+                            <h4 class="card-prix">{{ p.price }}€</h4>
+                            <p class="card-text">
+                                {% for i in 1..p.rating  %}
+                                    <span class="fa fa-star checked"></span>
+                                {% endfor %}
+                                ({{ p.rating }})
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>

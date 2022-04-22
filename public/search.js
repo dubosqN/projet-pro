@@ -24,37 +24,29 @@ search.addWidgets([
         autofocus: true,
         searchAsYouType: true,
     }),
-/*    instantsearch.widgets.clearRefinements({
-        container: '#clear-refinements',
-    }),
-    instantsearch.widgets.refinementList({
-        container: '#brand-list',
-        attribute: 'category',
-    }),*/
 
     instantsearch.widgets.hits({
         container: '#hits',
         templates: {
             item: `
-        <div class="hero__card">
-            <a href="/produits/{{ objectID }}" class="card-href">
-               <div class="card-image">
-                <img src="{{url}}" alt="{{name}}"/>
-               </div>
-               <div class="card--body">
-                <h5 class="card-title">{{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}</h5>
-                <h4 class="card-prix">\{{price}}€</h4>
-                <p class="card-text">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fas fa-star-half checked"></span>
-                                (\{{rating}})
-                </p>
-               </div>
-            </a>
-        </div>
-      `,
+                    <div class="hero__card">
+                        <a href="/produits/{{ objectID }}" class="card-href">
+                           <div class="card-image">
+                            <img src="{{url}}" alt="{{name}}"/>
+                           </div>
+                           <div class="card--body">
+                            <h5 class="card-title">{{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}</h5>
+                            <h4 class="card-prix">\{{price}}€</h4>
+                            <p class="card-text">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                            (\{{rating}})
+                            </p>
+                           </div>
+                        </a>
+                    </div>
+                  `,
         },
     }),
     instantsearch.widgets.clearRefinements({
@@ -62,6 +54,30 @@ search.addWidgets([
         templates: {
             resetLabel: 'Réinitialiser les filtres',
         }
+    }),
+
+    instantsearch.widgets.sortBy({
+        container: '#sort-by',
+        items: [
+            { label: 'Prix (Croissant)', value: 'dev_products' },
+            { label: 'Prix (Décroissant)', value: 'dev_products_price_desc' },
+            { label: 'Nom (A-Z)', value: 'dev_products_A-Z' },
+            { label: 'Notes', value: 'dev_products_rating' },
+        ],
+    }),
+
+
+    instantsearch.widgets.rangeSlider({
+        container: '#range-slider',
+        attribute: 'price',
+        min: 0,
+        max: 4999,
+        pips: false,
+        tooltips: {
+            format(value) {
+                return `${Math.round(value).toLocaleString()}€`;
+            },
+        },
     }),
 
     brandList({

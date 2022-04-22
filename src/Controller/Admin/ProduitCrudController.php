@@ -33,7 +33,6 @@ class ProduitCrudController extends AbstractCrudController
             TextField::new('url')->setRequired(true)->onlyOnForms(),
             TextField::new('image')->setRequired(true),
             IntegerField::new('price')->setRequired(true),
-            TextField::new('price_range')->setRequired(true)->onlyOnForms(),
             IntegerField::new('rating')->setRequired(true)->onlyOnForms(),
             AssociationField::new('couleur', 'Couleur(s)')->setRequired(true)->onlyOnForms(),
             AssociationField::new('category', 'Categorie(s)')->setRequired(true)->onlyOnForms(),

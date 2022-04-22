@@ -2,13 +2,19 @@
 
 {% block body %}
     <section class="hero">
-        <div class="hero__container">
-            <div id="current-refinements"></div>
-            <div id="clear-refinements"></div>
-            <div id="refinement-list"></div>
-            <div id="menu"></div>
-            <div type="text" id="searchbox" class="ais-SearchBox"></div>
-            <div class="ais-InstantSearch">
+        <div class="trie-container">
+            <div class="trie">
+                <div type="text" id="searchbox" class="ais-SearchBox"></div>
+                <div id="current-refinements"></div>
+                <div id="clear-refinements"></div>
+                <div id="sort-by"></div>
+                <div id="range-slider"></div>
+
+                <div id="refinement-list"></div>
+                <div id="menu"></div>
+            </div>
+
+            <div class="ais-InstantSearch results">
                 <div id="hits"></div>
                 <div id="pagination"></div>
             </div>

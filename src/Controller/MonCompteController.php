@@ -17,7 +17,7 @@ use Doctrine\ORM\EntityManagerInterface;
 class MonCompteController extends AbstractController
 {
     /**
-     * @Route("/profil", name="profil")
+     * @Route("/profil", name="app_profil")
      */
     public function index(UserInterface $user, Request $request, EntityManagerInterface $entityManager): Response
     {

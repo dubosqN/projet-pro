@@ -2,16 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\CouleurRepository;
+use App\Repository\PriceRangeRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ORM\Entity(repositoryClass=CouleurRepository::class)
+ * @ORM\Entity(repositoryClass=PriceRangeRepository::class)
  */
-class Couleur
+class PriceRange
 {
     /**
      * @ORM\Id
@@ -24,16 +24,10 @@ class Couleur
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"searchable"})
      */
-    private $nom;
+    private $priceRange;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
-     * @Groups({"searchable"})
-     */
-    private $hex;
-
-    /**
-     * @ORM\ManyToMany(targetEntity=Produit::class, mappedBy="couleur")
+     * @ORM\OneToMany(targetEntity=Produit::class, mappedBy="priceRange")
      */
     private $produits;
 
@@ -47,26 +41,14 @@ class Couleur
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function getPriceRange(): ?string
     {
-        return $this->nom;
+        return $this->priceRange;
     }
 
-    public function setNom(?string $nom): self
+    public function setPriceRange(?string $priceRange): self
     {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    public function getHex(): ?string
-    {
-        return $this->hex;
-    }
-
-    public function setHex(?string $hex): self
-    {
-        $this->hex = $hex;
+        $this->priceRange = $priceRange;
 
         return $this;
     }
@@ -83,7 +65,7 @@ class Couleur
     {
         if (!$this->produits->contains($produit)) {
             $this->produits[] = $produit;
-            $produit->addCouleur($this);
+            $produit->setPriceRange($this);
         }
 
         return $this;
@@ -92,7 +74,10 @@ class Couleur
     public function removeProduit(Produit $produit): self
     {
         if ($this->produits->removeElement($produit)) {
-            $produit->removeCouleur($this);
+            // set the owning side to null (unless already changed)
+            if ($produit->getPriceRange() === $this) {
+                $produit->setPriceRange(null);
+            }
         }
 
         return $this;
@@ -100,6 +85,6 @@ class Couleur
 
     public function __toString(): ?string
     {
-        return $this->getNom();
+        return $this->getPriceRange();
     }
 }

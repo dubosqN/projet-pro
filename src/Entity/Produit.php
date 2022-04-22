@@ -78,6 +78,11 @@ class Produit
      */
     private $price_range;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=PriceRange::class, inversedBy="produits")
+     */
+    private $priceRange;
+
     public function __construct()
     {
         $this->couleur = new ArrayCollection();
