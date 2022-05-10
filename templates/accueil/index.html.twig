@@ -3,23 +3,12 @@
 {% block body %}
 <section class="hero">
     <div class="hero__container">
-        <p class="text-hero-left">Produits Populaires</p>
         <div type="text" id="searchbox" class="ais-SearchBox"></div>
 {#        <div class="ais-InstantSearch">
             <div id="hits"></div>
             <div id="pagination"></div>
         </div>#}
         <div class="hero-text-card">
-            <div class="section-text">
-                <p>
-                    <b>Les innovateurs du mobilier de luxe abordable.</b>
-                    <br/><br/>En 1980, Richard Song, expert en achats artisanaux, a lancé la société de meubles StarSong. Depuis lors, des milliers de familles ont profité du confort, du luxe et de l’élégance décontractée des innovations de Song en matière de mobilier de jardin.
-                    <br/><br/>Entreprise familiale établie, StarSong a grandi grâce à la recherche dévouée de la famille à travers le monde pour trouver des matériaux de haute qualité utilisés dans leurs conceptions pratiques et dernier cri. Aujourd'hui, le fabricant de meubles de luxe abordables basé dans le nord de la Californie est dirigé par son fils Dan, qui partage les valeurs traditionnelles de son père et son engagement envers la qualité et la créativité. StarSong est fier de ses meubles de luxe accessibles, ainsi que de leur excellence en matière de service à la clientèle.
-                    <a href="/categorie">
-                        <br/>Découvrir Sirio <i class="fas fa-arrow-right"></i>
-                    </a>
-                </p>
-            </div>
             {% for p in produits %}
                 <div class="hero__card">
                     <a href="/produits/{{ p.id }}" class="card-href">

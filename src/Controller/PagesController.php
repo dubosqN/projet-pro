@@ -18,7 +18,7 @@ class PagesController extends AbstractController
     public function index(SearchService $searchService, SessionInterface $session): Response
     {
 
-        $produits = $this->getDoctrine()->getRepository(Produit::class)->findBy(array(), null, 3);
+        $produits = $this->getDoctrine()->getRepository(Produit::class)->findBy(array(), null, 4);
         $panier = $session->get("panier", []);
 
         $this->searchService = $searchService;

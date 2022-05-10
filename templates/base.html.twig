@@ -45,10 +45,13 @@
                     <ul>
                         <li>
                             {% if (app.user) %}
-                                <a href="{{ path('app_profil') }}"><i class="fa-solid fa-user"></i> {{ app.user.email }}</a>
+                                <a href="{{ path('app_profil') }}"><i class="fa-solid fa-user"></i> {{ app.user.nom }}</a>
                             {% else %}
                                 <a href="{{ path('login') }}">Se connecter</a>
                             {% endif %}
+                        </li>
+                        <li>
+                            <a href="/categorie">Catalogue</a>
                         </li>
                         {% if is_granted('ROLE_ADMIN') %}
                         <li>
@@ -56,7 +59,7 @@
                         </li>
                         {% endif %}
                         <li>
-                            <a href="#">Panier ({#{{ qtty }}#})</a>
+                            <a href="/cart">Panier ({#{{ qtty }}#})</a>
                         </li>
                     </ul>
                 </div>

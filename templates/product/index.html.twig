@@ -24,7 +24,11 @@
                             ({{ produit.rating }})
                         </p>
                         <hr>
-                        <p>10 en stock</p>
+                        {% if produit.stock > 0 %}
+                            <p>{{ produit.stock }} en stock</p>
+                        {% else %}
+                            <p style="color: red">Cet article est actuellement en rupture de stock :(</p>
+                        {% endif %}
                         <hr>
                         <a href="{{path("cart_add", {id: produit.id})}}" class="add-panier">Ajouter au panier</a>
                     </div>

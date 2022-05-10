@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sirio - Validation adresse{% endblock %}
+
+{% block body %}
+    <div class="panier-etapes">
+        <span class="line"></span>
+        <div class="rond-container">
+            <span class="ronds">1</span>
+            <span class="ronds ronds-actif">2</span>
+            <span class="ronds">3</span>
+            <span class="ronds">4</span>
+        </div>
+    </div>
+    <section class="adresse-section">
+        <div class="adresse-container">
+            <div class="adresse-form">
+                <form class="row g-3">
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label">Adresse</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="19 Rue du Bignon">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress2" class="form-label">Adress suitee</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="Numéro d'apprtement, une porte, un code...">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputCity" class="form-label">Ville</label>
+                        <input type="text" class="form-control" id="inputCity" placeholder="Rennes">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputState" class="form-label">Pays</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>France</option>
+                            <option>Espagne</option>
+                            <option>Italie</option>
+                            <option>États-Unis</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="inputZip" class="form-label">Code Postal</label>
+                        <input type="text" class="form-control shadow-none" id="inputZip">
+                    </div>
+                    <div class="col-12">
+                        <a href="{{ path('cart_payment_checkout') }}" class="btn btn-primary">Continuer</a>
+                    </div>
+                </form>
+            </div>
+            <div class="panier-recap-adresse">
+                    <div class="items-adresse">
+                        {% for e in dataPanier %}
+                            <div class="panier-items">
+                                <img src="{{ e.produit.image }}">
+                                <div class="panier-body">
+                                    <div class="panier-desc">
+                                        <h1>{{ e.produit.name }}</h1>
+                                        <span class="items-price">{{ e.quantite * e.produit.price }} €</span>
+                                    </div>
+                                    <span>X{{ e.quantite }}</span>
+                                </div>
+                            </div>
+                        {% else %}
+                            <td colspan="5" class="text-center">Votre panier est vide</td>
+                        {% endfor %}
+                    </div>
+                <div class="total-price">
+                    <span class="panier-recap-total">Total</span>
+                    <span class="panier-recap-price">{{ total }} €</span>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

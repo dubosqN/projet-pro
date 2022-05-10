@@ -28,11 +28,12 @@ class ProduitCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            TextField::new('name')->setRequired(true),
-            TextField::new('description')->setRequired(true)->onlyOnForms(),
+            TextField::new('name', 'Nom')->setRequired(true),
+            TextField::new('description', 'Description')->setRequired(true)->onlyOnForms(),
             TextField::new('url')->setRequired(true)->onlyOnForms(),
-            TextField::new('image')->setRequired(true),
+            TextField::new('image', 'Image')->setRequired(true),
             IntegerField::new('price')->setRequired(true),
+            IntegerField::new('stock', 'Stock')->setRequired(true),
             IntegerField::new('rating')->setRequired(true)->onlyOnForms(),
             AssociationField::new('couleur', 'Couleur(s)')->setRequired(true)->onlyOnForms(),
             AssociationField::new('category', 'Categorie(s)')->setRequired(true)->onlyOnForms(),
