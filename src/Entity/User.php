@@ -84,10 +84,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $commandes;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Favoris::class, mappedBy="user")
+     */
+    private $Produit;
+
     public function __construct()
     {
         $this->cartes = new ArrayCollection();
         $this->commandes = new ArrayCollection();
+        $this->Produit = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -321,6 +327,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
             if ($commande->getUser() === $this) {
                 $commande->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Favoris[]
+     */
+    public function getProduit(): Collection
+    {
+        return $this->Produit;
+    }
+
+    public function addProduit(Favoris $produit): self
+    {
+        if (!$this->Produit->contains($produit)) {
+            $this->Produit[] = $produit;
+            $produit->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProduit(Favoris $produit): self
+    {
+        if ($this->Produit->removeElement($produit)) {
+            // set the owning side to null (unless already changed)
+            if ($produit->getUser() === $this) {
+                $produit->setUser(null);
             }
         }
 
