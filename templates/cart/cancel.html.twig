@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Payment Fail!{% endblock %}
+{% block title %}Le paiement à échoué !{% endblock %}
 
 {% block body %}
 
-    <h1>Thanks for your attempted order!</h1>
-    <p>
-        We would appreciate your business!
-        But your payment failed :(
-        <a href="mailto:orders@example.com">failures@example.com</a>.
-    </p>
-
-    <div>
-
-    </div>
+    <section class="success-section">
+        <img src="/images/cross.png">
+        <h1 class="fail">Malheureusement, le paiement à échoué ou à été annulé...</h1>
+        <p>
+            Nous apprecions votre interêt pour notre produit,
+            <br/>
+            Pour toute questions :
+            <a href="mailto:orders@example.com">commandes@sirio.com</a>.
+        </p>
+    </section>
 {% endblock %}

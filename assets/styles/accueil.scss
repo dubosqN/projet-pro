@@ -716,7 +716,8 @@ footer{
   width: 100%;
   display: flex;
   justify-content: center;
-  height: 400px;
+  min-height: 600px;
+  height: auto;
 }
 
 .adresse-container{
@@ -729,6 +730,7 @@ footer{
   max-width: 100%;
   display: flex;
   justify-content: center;
+  height: 380px;
 }
 
 .panier-recap-adresse{
@@ -771,6 +773,8 @@ footer{
 
   .panier-desc{
     display: flex;
+    justify-content: space-between;
+    width: 200px;
   }
 }
 
@@ -806,4 +810,31 @@ footer{
 
 #search-input{
   width: 400px;
+}
+
+.success-section{
+  height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h1{
+    font-size: 2rem;
+    color: #acbe7f;
+  }
+
+  .fail{
+    color: #ee4a4a !important;
+  }
+
+  img{
+    width: 150px;
+  }
+}
+
+.hero__container{
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
